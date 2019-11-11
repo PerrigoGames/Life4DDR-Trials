@@ -16,6 +16,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.perrigogames.life4trials.R
+import com.perrigogames.life4trials.SettingsKeys
 import com.perrigogames.life4trials.data.ClearType
 import com.perrigogames.life4trials.data.ClearType.*
 import com.perrigogames.life4trials.data.Song
@@ -166,7 +167,7 @@ class SongEntryActivity: AppCompatActivity() {
         checkErrorForValue(goods, field_goods)
         checkErrorForValue(greats, field_greats)
         checkErrorForValue(perfects, field_perfects)
-        if (!SharedPrefsUtil.getDebugFlag(this, SettingsActivity.KEY_DEBUG_ACCEPT_INVALID) &&
+        if (!SharedPrefsUtil.getDebugFlag(this, SettingsKeys.KEY_DEBUG_ACCEPT_INVALID) &&
             allFields.any { it.visibility == VISIBLE && it.error != null }) {
             Toast.makeText(this, R.string.make_sure_fields_filled, Toast.LENGTH_SHORT).show()
         } else {

@@ -10,8 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.perrigogames.life4trials.Life4Application
 import com.perrigogames.life4trials.R
-import com.perrigogames.life4trials.activity.SettingsActivity.Companion.KEY_INFO_NAME
-import com.perrigogames.life4trials.activity.SettingsActivity.Companion.KEY_INFO_RIVAL_CODE
+import com.perrigogames.life4trials.SettingsKeys.KEY_INFO_NAME
+import com.perrigogames.life4trials.SettingsKeys.KEY_INFO_RIVAL_CODE
 import com.perrigogames.life4trials.data.BaseRankGoal
 import com.perrigogames.life4trials.data.LadderRank
 import com.perrigogames.life4trials.db.GoalStatus

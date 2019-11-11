@@ -71,6 +71,7 @@ android {
 }
 
 dependencies {
+    implementation project(':common')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation dep.kotlin_stdlib_jre7
     implementation dep.multidex

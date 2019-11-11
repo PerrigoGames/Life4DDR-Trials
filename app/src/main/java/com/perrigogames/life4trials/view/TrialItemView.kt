@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.perrigogames.life4trials.R
-import com.perrigogames.life4trials.activity.SettingsActivity
-import com.perrigogames.life4trials.activity.SettingsActivity.Companion.KEY_LIST_SHOW_EX
-import com.perrigogames.life4trials.activity.SettingsActivity.Companion.KEY_LIST_TINT_COMPLETED
+import com.perrigogames.life4trials.SettingsKeys
+import com.perrigogames.life4trials.SettingsKeys.KEY_LIST_SHOW_EX
+import com.perrigogames.life4trials.SettingsKeys.KEY_LIST_TINT_COMPLETED
 import com.perrigogames.life4trials.data.Trial
 import com.perrigogames.life4trials.data.TrialRank
 import com.perrigogames.life4trials.util.SharedPrefsUtil
@@ -60,7 +60,7 @@ class TrialItemView @JvmOverloads constructor(context: Context, attrs: Attribute
     fun setExScore(exScore: Int?) {
         (image_rank as TrialJacketView).let { view ->
             view.showExRemaining = trial?.isEvent == true ||
-                    SharedPrefsUtil.getUserFlag(context, SettingsActivity.KEY_LIST_SHOW_EX_REMAINING, false)
+                    SharedPrefsUtil.getUserFlag(context, SettingsKeys.KEY_LIST_SHOW_EX_REMAINING, false)
             view.exScore = if (showEx) exScore else null
         }
     }

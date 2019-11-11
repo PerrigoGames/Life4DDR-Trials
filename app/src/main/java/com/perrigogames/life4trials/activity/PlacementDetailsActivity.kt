@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import com.perrigogames.life4trials.R
-import com.perrigogames.life4trials.activity.SettingsActivity.Companion.KEY_DETAILS_PHOTO_SELECT
+import com.perrigogames.life4trials.SettingsKeys.KEY_DETAILS_PHOTO_SELECT
 import com.perrigogames.life4trials.data.Song
 import com.perrigogames.life4trials.data.Trial
 import com.perrigogames.life4trials.life4app

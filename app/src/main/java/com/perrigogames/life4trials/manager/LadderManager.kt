@@ -11,8 +11,8 @@ import androidx.fragment.app.FragmentActivity
 import com.perrigogames.life4trials.BuildConfig
 import com.perrigogames.life4trials.Life4Application
 import com.perrigogames.life4trials.R
-import com.perrigogames.life4trials.activity.SettingsActivity
-import com.perrigogames.life4trials.activity.SettingsActivity.Companion.KEY_IMPORT_SKIP_DIRECTIONS
+import com.perrigogames.life4trials.SettingsKeys
+import com.perrigogames.life4trials.SettingsKeys.KEY_IMPORT_SKIP_DIRECTIONS
 import com.perrigogames.life4trials.api.GithubDataAPI
 import com.perrigogames.life4trials.api.MajorVersionedRemoteData
 import com.perrigogames.life4trials.data.*
@@ -116,10 +116,10 @@ class LadderManager(private val context: Context,
     // Local User Rank
     //
     fun getUserRank(): LadderRank? =
-        LadderRank.parse(SharedPrefsUtil.getUserString(context, SettingsActivity.KEY_INFO_RANK)?.toLongOrNull())
+        LadderRank.parse(SharedPrefsUtil.getUserString(context, SettingsKeys.KEY_INFO_RANK)?.toLongOrNull())
 
     fun setUserRank(rank: LadderRank?) {
-        SharedPrefsUtil.setUserString(context, SettingsActivity.KEY_INFO_RANK, rank?.stableId.toString())
+        SharedPrefsUtil.setUserString(context, SettingsKeys.KEY_INFO_RANK, rank?.stableId.toString())
         Life4Application.eventBus.post(LadderRankUpdatedEvent())
     }
 

@@ -13,7 +13,7 @@ import androidx.annotation.StringRes
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.perrigogames.life4trials.R
-import com.perrigogames.life4trials.activity.SettingsActivity
+import com.perrigogames.life4trials.SettingsKeys
 import com.perrigogames.life4trials.data.LadderRank
 import com.perrigogames.life4trials.data.Trial
 import com.perrigogames.life4trials.data.TrialRank
@@ -73,12 +73,12 @@ object NotificationUtil {
     }
 
     fun showUserInfoNotifications(c: Context, exScore: Int) {
-        SharedPrefsUtil.getUserString(c, SettingsActivity.KEY_INFO_RIVAL_CODE)?.let { rivalCode ->
+        SharedPrefsUtil.getUserString(c, SettingsKeys.KEY_INFO_RIVAL_CODE)?.let { rivalCode ->
             if (rivalCode.isNotEmpty()) {
                 notifyCopyableMessage(c, ID_NOTIF_RIVAL_CODE, R.string.rival_code, rivalCode)
             }
         }
-        SharedPrefsUtil.getUserString(c, SettingsActivity.KEY_INFO_TWITTER_NAME)?.let { twitterName ->
+        SharedPrefsUtil.getUserString(c, SettingsKeys.KEY_INFO_TWITTER_NAME)?.let { twitterName ->
             if (twitterName.isNotEmpty()) {
                 notifyCopyableMessage(c, ID_NOTIF_TWITTER_HANDLE, R.string.twitter_name, twitterName)
             }

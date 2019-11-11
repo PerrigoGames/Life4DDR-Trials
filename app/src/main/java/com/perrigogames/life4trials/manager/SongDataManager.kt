@@ -7,7 +7,7 @@ import androidx.appcompat.app.AlertDialog
 import com.crashlytics.android.Crashlytics
 import com.perrigogames.life4trials.Life4Application
 import com.perrigogames.life4trials.R
-import com.perrigogames.life4trials.activity.SettingsActivity.Companion.KEY_IMPORT_GAME_VERSION
+import com.perrigogames.life4trials.SettingsKeys.KEY_IMPORT_GAME_VERSION
 import com.perrigogames.life4trials.api.GithubDataAPI
 import com.perrigogames.life4trials.api.LocalRemoteData
 import com.perrigogames.life4trials.api.MajorVersionedRemoteData

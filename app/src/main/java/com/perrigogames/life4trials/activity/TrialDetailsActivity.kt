@@ -13,8 +13,9 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.google.android.material.snackbar.Snackbar
 import com.perrigogames.life4trials.R
-import com.perrigogames.life4trials.activity.SettingsActivity.Companion.KEY_DETAILS_ENFORCE_EXPERT
-import com.perrigogames.life4trials.activity.SettingsActivity.Companion.KEY_DETAILS_PHOTO_SELECT
+import com.perrigogames.life4trials.SettingsKeys
+import com.perrigogames.life4trials.SettingsKeys.KEY_DETAILS_ENFORCE_EXPERT
+import com.perrigogames.life4trials.SettingsKeys.KEY_DETAILS_PHOTO_SELECT
 import com.perrigogames.life4trials.activity.SettingsActivity.Companion.KEY_DETAILS_UPDATE_GOAL
 import com.perrigogames.life4trials.data.*
 import com.perrigogames.life4trials.life4app
@@ -316,7 +317,7 @@ class TrialDetailsActivity: PhotoCaptureActivity(), SongListFragment.Listener {
         if (isFinal) {
             onScoreSummaryPhotoTaken(uri)
         } else {
-            if (SharedPrefsUtil.getDebugFlag(this, SettingsActivity.KEY_DEBUG_BYPASS_STAT_ENTRY)) {
+            if (SharedPrefsUtil.getDebugFlag(this, SettingsKeys.KEY_DEBUG_BYPASS_STAT_ENTRY)) {
                 currentResult!!.randomize()
                 onEntryFinished(currentResult!!)
             } else {
@@ -334,7 +335,7 @@ class TrialDetailsActivity: PhotoCaptureActivity(), SongListFragment.Listener {
             }
             currentResult!!.photoUri = uri
 
-            if (SharedPrefsUtil.getDebugFlag(this, SettingsActivity.KEY_DEBUG_BYPASS_STAT_ENTRY)) {
+            if (SharedPrefsUtil.getDebugFlag(this, SettingsKeys.KEY_DEBUG_BYPASS_STAT_ENTRY)) {
                 currentResult!!.randomize()
                 onEntryFinished(currentResult!!)
             } else {

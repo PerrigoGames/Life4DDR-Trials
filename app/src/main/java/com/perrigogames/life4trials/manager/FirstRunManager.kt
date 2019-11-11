@@ -2,8 +2,12 @@ package com.perrigogames.life4trials.manager
 
 import android.content.Context
 import android.content.Intent
-import com.perrigogames.life4trials.activity.*
-import com.perrigogames.life4trials.activity.SettingsActivity.Companion.KEY_INFO_NAME
+import com.perrigogames.life4trials.SettingsKeys
+import com.perrigogames.life4trials.SettingsKeys.KEY_INFO_NAME
+import com.perrigogames.life4trials.activity.FirstRankSelectionActivity
+import com.perrigogames.life4trials.activity.FirstRunInfoActivity
+import com.perrigogames.life4trials.activity.PlacementListActivity
+import com.perrigogames.life4trials.activity.PlayerProfileActivity
 import com.perrigogames.life4trials.util.SharedPrefsUtil
 import com.perrigogames.life4trials.util.SharedPrefsUtil.KEY_INIT_STATE
 import com.perrigogames.life4trials.util.SharedPrefsUtil.VAL_INIT_STATE_DONE
@@ -48,10 +52,10 @@ class FirstRunManager(private val context: Context): BaseManager() {
     fun setUserBasics(name: String, rivalCode: String?, twitterName: String?) {
         SharedPrefsUtil.setUserString(context, KEY_INFO_NAME, name)
         if (!rivalCode.isNullOrEmpty()) {
-            SharedPrefsUtil.setUserString(context, SettingsActivity.KEY_INFO_RIVAL_CODE, rivalCode)
+            SharedPrefsUtil.setUserString(context, SettingsKeys.KEY_INFO_RIVAL_CODE, rivalCode)
         }
         if (!twitterName.isNullOrEmpty()) {
-            SharedPrefsUtil.setUserString(context, SettingsActivity.KEY_INFO_TWITTER_NAME, twitterName)
+            SharedPrefsUtil.setUserString(context, SettingsKeys.KEY_INFO_TWITTER_NAME, twitterName)
         }
     }
 

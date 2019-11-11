@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.perrigogames.life4trials.Life4Application
 import com.perrigogames.life4trials.R
-import com.perrigogames.life4trials.activity.SettingsActivity
+import com.perrigogames.life4trials.SettingsKeys
 import com.perrigogames.life4trials.data.Trial
 import com.perrigogames.life4trials.data.TrialType
 import com.perrigogames.life4trials.event.SavedRankUpdatedEvent
@@ -34,7 +34,7 @@ class TrialListFragment : Fragment() {
     private val trials: List<Trial> get() = trialManager.activeTrials
 
     private val featureNew: Boolean
-        get() = SharedPrefsUtil.getUserFlag(context!!, SettingsActivity.KEY_LIST_HIGHLIGHT_NEW, true)
+        get() = SharedPrefsUtil.getUserFlag(context!!, SettingsKeys.KEY_LIST_HIGHLIGHT_NEW, true)
 
     private lateinit var recyclerView: RecyclerView
 
