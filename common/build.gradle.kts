@@ -28,6 +28,7 @@ kotlin {
 
     sourceSets["androidMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
+        implementation(dep.androidx)
     }
 }
 

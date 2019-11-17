@@ -59,7 +59,7 @@ expect fun getUserInt(c: Any, flag: String, def: Int)
 expect fun getUserLong(c: Any, flag: String, def: Long)
 
 /** @return a stored string in the user preferences */
-expect fun getUserString(c: Any, flag: String, def: String? = null)
+expect fun getUserString(c: Any, flag: String, def: String?
 
 /** @return a stored debug flag in the user preferences, also checking the debug state of the app */
 expect fun getDebugFlag(c: Any, flag: String)
@@ -70,6 +70,6 @@ expect fun setUserInt(c: Any, flag: String, v: Int)
 
 expect fun setUserLong(c: Any, flag: String, v: Long)
 
-expect fun setUserString(c: Any, flag: String, v: String? = null)
+expect fun setUserString(c: Any, flag: String, v: String?
 
 expect fun setDebugFlag(c: Any, flag: String, v: Boolean)
