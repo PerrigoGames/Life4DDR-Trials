@@ -47,29 +47,3 @@ object SettingsKeys {
 
     const val KEY_DEBUG_RANK_PREFIX = "KEY_DEBUG_RANK_PREFIX"
 }
-
-
-/** @return a stored flag in the user preferences */
-expect fun getUserFlag(c: Any, flag: String, def: Boolean)
-
-/** @return a stored int in the user preferences */
-expect fun getUserInt(c: Any, flag: String, def: Int)
-
-/** @return a stored Long in the user preferences */
-expect fun getUserLong(c: Any, flag: String, def: Long)
-
-/** @return a stored string in the user preferences */
-expect fun getUserString(c: Any, flag: String, def: String? = null)
-
-/** @return a stored debug flag in the user preferences, also checking the debug state of the app */
-expect fun getDebugFlag(c: Any, flag: String)
-
-expect fun setUserFlag(c: Any, flag: String, v: Boolean)
-
-expect fun setUserInt(c: Any, flag: String, v: Int)
-
-expect fun setUserLong(c: Any, flag: String, v: Long)
-
-expect fun setUserString(c: Any, flag: String, v: String? = null)
-
-expect fun setDebugFlag(c: Any, flag: String, v: Boolean)
