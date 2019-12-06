@@ -1,31 +1,36 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
-apply plugin: 'io.fabric'
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "kotlin-android-extensions"
+    id "kotlin-kapt"
+    id "io.fabric"
+
+    id "com.google.gms.google-services"
+    id "io.objectbox"
+}
 
 android {
     signingConfigs {
         upload {
-            storeFile file('../../keystores/upload-keystore.jks')
-            keyPassword 'FlOnG9T#0sNe41bXjKtVJi75Y'
-            storePassword 'FlOnG9T#0sNe41bXjKtVJi75Y'
-            keyAlias = 'upload'
+            storeFile = file("../../keystores/upload-keystore.jks")
+            keyPassword = "FlOnG9T#0sNe41bXjKtVJi75Y"
+            storePassword = "FlOnG9T#0sNe41bXjKtVJi75Y"
+            keyAlias = "upload"
         }
         debug {
-            storeFile file('../../keystores/debug-keystore.jks')
-            keyPassword '9RA8qJW#hT^gI@T3UW0k$L3@W#'
-            storePassword '!R35qX!&$P6wuEOI%lm6y&lAyq'
-            keyAlias = 'debug'
+            storeFile = file("../../keystores/debug-keystore.jks")
+            keyPassword = "9RA8qJW#hT^gI@T3UW0k\$L3@W#"
+            storePassword = "!R35qX!&\$P6wuEOI%lm6y&lAyq"
+            keyAlias = "debug"
         }
     }
-    compileSdkVersion 28
+    compileSdkVersion = 28
     defaultConfig {
         applicationId "com.perrigogames.life4trials"
-        minSdkVersion 18
-        targetSdkVersion 28
-        versionCode 52
-        versionName "3.1.0"
+        minSdkVersion(18)
+        targetSdkVersion(28)
+        versionCode = 52
+        versionName = "3.1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         signingConfig signingConfigs.upload
@@ -33,35 +38,35 @@ android {
     buildTypes {
         release {
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             signingConfig signingConfigs.upload
             manifestPlaceholders = [providerName: "com.perrigogames.fileprovider"]
         }
         preview {
-            initWith release
+            initWith(release)
         }
         debug {
-            applicationIdSuffix ".debug"
-            signingConfig signingConfigs.debug
+            applicationIdSuffix = ".debug"
+            signingConfig = signingConfigs.debug
             manifestPlaceholders = [providerName: "com.perrigogames.fileprovider.debug"]
         }
     }
     compileOptions {
-        sourceCompatibility = '1.8'
-        targetCompatibility = '1.8'
+        sourceCompatibility = "1.8"
+        targetCompatibility = "1.8"
     }
     packagingOptions {
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/LICENSE.txt'
-        exclude 'META-INF/license.txt'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/NOTICE.txt'
-        exclude 'META-INF/notice.txt'
-        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/DEPENDENCIES")
+        exclude("META-INF/LICENSE")
+        exclude("META-INF/LICENSE.txt")
+        exclude("META-INF/license.txt")
+        exclude("META-INF/NOTICE")
+        exclude("META-INF/NOTICE.txt")
+        exclude("META-INF/notice.txt")
+        exclude("META-INF/ASL2.0")
     }
     lintOptions {
-        abortOnError false
+        abortOnError = false
     }
     testOptions {
         unitTests {
@@ -71,33 +76,29 @@ android {
 }
 
 dependencies {
-    implementation project(':common')
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation dep.kotlin_stdlib_jre7
-    implementation dep.multidex
-    implementation dep.androidx
-    implementation dep.glide
-    implementation dep.eventbus
-    implementation dep.dexter
-    implementation dep.firebase
-    implementation dep.retrofit
-    implementation dep.coroutines_android
-    implementation dep.coroutines_jvm
-    implementation dep.lottie
+    implementation(project(":common"))
+    implementation(fileTree(include: ["*.jar"], dir: "libs"))
+    implementation(dep.kotlin_stdlib_jre7)
+    implementation(dep.multidex)
+    implementation(dep.androidx)
+    implementation(dep.glide)
+    implementation(dep.eventbus)
+    implementation(dep.dexter)
+    implementation(dep.firebase)
+    implementation(dep.retrofit)
+    implementation(dep.coroutines_android)
+    implementation(dep.coroutines_jvm)
+    implementation(dep.lottie)
 
-    debugImplementation dep.objectbox_debug
-    releaseImplementation dep.objectbox_release
+    debugImplementation(dep.objectbox_debug)
+    releaseImplementation(dep.objectbox_release)
 
-    implementation "com.google.guava:guava:27.0.1-android"
+    implementation("com.google.guava:guava:27.0.1-android")
 
-    kapt dep.glide_compiler
+    kapt(dep.glide_compiler)
 
-    testImplementation dep.junit
-    testImplementation dep.androidx_test
-    testImplementation dep.robolectric
-    androidTestImplementation dep.espresso
+    testImplementation(dep.junit)
+    testImplementation(dep.androidx_test)
+    testImplementation(dep.robolectric)
+    androidTestImplementation(dep.espresso)
 }
-
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'io.objectbox' // apply last
-

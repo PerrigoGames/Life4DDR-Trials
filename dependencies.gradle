@@ -1,34 +1,34 @@
 ext {
     // Common
-    coroutines_version = '1.0.1'
+    coroutines_version = "1.0.1"
 
     // JVM
-    retrofit_version = '2.6.0'
-    coroutines_retrofit_version = '1.0.0'
-    okhttp_version = '3.12.0'
-    gson_version = '2.8.2'
-    junit_version = '4.12'
+    retrofit_version = "2.6.0"
+    coroutines_retrofit_version = "1.0.0"
+    okhttp_version = "3.12.0"
+    gson_version = "2.8.2"
+    junit_version = "4.12"
 
     // Android
-    android_version = '27.0.1'
-    androidx_version = '1.1.0'
-    androidx_lifecycle_version = '2.0.0'
+    android_version = "27.0.1"
+    androidx_version = "1.1.0"
+    androidx_lifecycle_version = "2.0.0"
     multidex_version = "1.0.3"
-    anko_version = '0.10.1'
-    glide_version = '4.9.0'
-    firebase_version = '16.0.9'
-    firebase_messaging_version = '19.0.0'
-    preference_holder_version = '1.51'
-    activitystarter_version = '1.12-beta-2'
-    kotlinandroidviewbindings_version = '0.10'
-    test_runner_version = '1.2.0'
-    espresso_version = '3.2.0'
-    robolectric_version = '4.3'
-    kotlin_preferences_version = '1.51'
-    fabric_version = '2.10.0'
-    eventbus_version = '3.1.1'
-    dexter_version = '5.0.0'
-    lottie_version = '3.3.0'
+    anko_version = "0.10.1"
+    glide_version = "4.9.0"
+    firebase_version = "16.0.9"
+    firebase_messaging_version = "19.0.0"
+    preference_holder_version = "1.51"
+    activitystarter_version = "1.12-beta-2"
+    kotlinandroidviewbindings_version = "0.10"
+    test_runner_version = "1.2.0"
+    espresso_version = "3.2.0"
+    robolectric_version = "4.3"
+    kotlin_preferences_version = "1.51"
+    fabric_version = "2.10.0"
+    eventbus_version = "3.1.1"
+    dexter_version = "5.0.0"
+    lottie_version = "3.3.0"
 
     dep = [
             kotlin_stdlib_common       : "org.jetbrains.kotlin:kotlin-stdlib-common:$kotlin_version",
@@ -82,7 +82,7 @@ ext {
             robolectric                : "org.robolectric:robolectric:$robolectric_version",
             kotlin_preferences         : ["com.marcinmoskala.PreferenceHolder:preferenceholder:$kotlin_preferences_version",
                                           "com.marcinmoskala.PreferenceHolder:preferenceholder-gson-serializer:$kotlin_preferences_version"],
-            code_view                  : 'com.github.tiagohm:CodeView:0.4.0',
+            code_view                  : "com.github.tiagohm:CodeView:0.4.0",
             lottie                     : "com.airbnb.android:lottie:$lottie_version",
 
             // Native
