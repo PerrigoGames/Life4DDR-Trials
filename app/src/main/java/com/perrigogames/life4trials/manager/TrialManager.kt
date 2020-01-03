@@ -6,7 +6,8 @@ import android.net.Uri
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.crashlytics.android.Crashlytics
-import com.perrigogames.life4trials.*
+import com.perrigogames.life4trials.BuildConfig
+import com.perrigogames.life4trials.Life4Application
 import com.perrigogames.life4trials.api.GithubDataAPI
 import com.perrigogames.life4trials.api.MajorVersionedRemoteData
 import com.perrigogames.life4trials.data.TrialData

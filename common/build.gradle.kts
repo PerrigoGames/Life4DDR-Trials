@@ -1,7 +1,37 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
+    id("com.android.application")
     kotlin("multiplatform")
+    id("kotlinx-serialization")
+}
+
+android {
+    compileSdkVersion(28)
+    defaultConfig {
+        minSdkVersion(18)
+        targetSdkVersion(28)
+    }
+    sourceSets {
+        getByName("main") {
+            setRoot("src/androidMain")
+        }
+        getByName("release") {
+            setRoot("src/androidMainRelease")
+        }
+        getByName("debug") {
+            setRoot("src/androidMainDebug")
+        }
+        getByName("test") {
+            setRoot("src/androidUnitTest")
+        }
+        getByName("testRelease") {
+            setRoot("src/androidUnitTestRelease")
+        }
+        getByName("testDebug") {
+            setRoot("src/androidUnitTestDebug")
+        }
+    }
 }
 
 kotlin {
@@ -15,20 +45,23 @@ kotlin {
     iOSTarget("ios") {
         binaries {
             framework {
-                baseName = "SharedCode"
+                baseName = "life4common"
             }
         }
     }
 
-    jvm("android")
+    android {
+    }
 
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:0.14.0")
     }
 
     sourceSets["androidMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
-//        implementation(dep.androidx)
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.14.0")
+        implementation("androidx.core:core-ktx:1.1.0")
     }
 }
 

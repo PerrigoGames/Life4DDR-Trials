@@ -32,4 +32,17 @@
     @org.greenrobot.eventbus.Subscribe <methods>;
 }
 -keep enum org.greenrobot.eventbus.ThreadMode { *; }
+
+## SettingsActivity
 -keep class com.perrigogames.life4trials.activity.SettingsActivity$*
+
+## kotlinx-serialization
+-keepattributes *Annotation*, InnerClasses
+-dontnote kotlinx.serialization.SerializationKt
+-keep,includedescriptorclasses class com.perrigogames.life4trials.**$$serializer { *; }
+-keepclassmembers class com.perrigogames.life4trials.** {
+    *** Companion;
+}
+-keepclasseswithmembers class com.perrigogames.life4trials.** {
+    kotlinx.serialization.KSerializer serializer(...);
+}

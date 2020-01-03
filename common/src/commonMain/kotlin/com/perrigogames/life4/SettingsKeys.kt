@@ -1,4 +1,4 @@
-package com.perrigogames.life4trials
+package com.perrigogames.life4
 
 object SettingsKeys {
     const val KEY_LIST_TINT_COMPLETED = "KEY_LIST_TINT_COMPLETED"

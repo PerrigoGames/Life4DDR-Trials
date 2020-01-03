@@ -7,7 +7,6 @@ import androidx.fragment.app.DialogFragment
 import com.perrigogames.life4trials.R
 import com.perrigogames.life4trials.SettingsKeys.KEY_IMPORT_SKIP_DIRECTIONS
 import com.perrigogames.life4trials.util.SharedPrefsUtil
-import kotlinx.android.synthetic.main.dialog_manager_import_directions.view.*
 
 class ScoreManagerImportDirectionsDialog(var listener: Listener? = null): DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

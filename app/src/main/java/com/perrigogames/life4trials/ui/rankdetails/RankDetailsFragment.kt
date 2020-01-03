@@ -15,9 +15,7 @@ import com.perrigogames.life4trials.data.LadderRank
 import com.perrigogames.life4trials.data.RankEntry
 import com.perrigogames.life4trials.life4app
 import com.perrigogames.life4trials.util.spannedText
-import com.perrigogames.life4trials.util.visibilityBool
 import com.perrigogames.life4trials.view.RankHeaderView
-import kotlinx.android.synthetic.main.fragment_rank_details.view.*
 import java.io.Serializable
 
 class RankDetailsFragment : Fragment() {

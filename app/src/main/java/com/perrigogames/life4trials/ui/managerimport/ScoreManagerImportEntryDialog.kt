@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import com.perrigogames.life4trials.R
-import kotlinx.android.synthetic.main.dialog_manager_import_entry.view.*
 
 /**
  * A custom Dialog class that prompts the user for a data string from an

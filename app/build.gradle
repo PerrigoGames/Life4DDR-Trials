@@ -42,9 +42,6 @@ android {
             signingConfig signingConfigs.upload
             manifestPlaceholders = [providerName: "com.perrigogames.fileprovider"]
         }
-        preview {
-            initWith(release)
-        }
         debug {
             applicationIdSuffix = ".debug"
             signingConfig = signingConfigs.debug
