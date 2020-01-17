@@ -32,7 +32,7 @@ class ProgressMatrixView @JvmOverloads constructor(context: Context, attrs: Attr
             updateContents()
         }
 
-    private val categorizedGoals: SparseArray<MutableList<DifficultyClearGoal>> = SparseArray(TrialData.HIGHEST_DIFFICULTY)
+    private val categorizedGoals: SparseArray<MutableList<DifficultyClearGoal>> = SparseArray(HIGHEST_DIFFICULTY)
 
     private fun updateCategorizedGoals() {
         categorizedGoals.clear()

@@ -3,22 +3,15 @@ package com.perrigogames.life4trials.data
 import android.content.Context
 import androidx.annotation.DrawableRes
 import com.google.gson.annotations.SerializedName
+import com.perrigogames.life4.data.MajorVersioned
+import com.perrigogames.life4.data.TrialType
 import com.perrigogames.life4trials.R
 import java.io.Serializable
 import java.util.*
 
 class TrialData(override val version: Int,
                 @SerializedName("major_version") override val majorVersion: Int,
-                val trials: List<Trial>): Serializable, MajorVersioned {
-
-    companion object {
-        const val HIGHEST_DIFFICULTY = 20
-        const val TRIAL_LENGTH = 4
-        const val MAX_SCORE = 1000000
-        const val SCORE_PENALTY_PERFECT = 10
-        const val AAA_SCORE = 990000
-    }
-}
+                val trials: List<Trial>): Serializable, MajorVersioned
 
 class Trial(val id: String,
             val name: String,
@@ -61,9 +54,3 @@ class Song(val name: String,
            @SerializedName("difficulty_class") val difficultyClass: DifficultyClass,
            val ex: Int,
            val url: String? = null): Serializable
-
-enum class TrialType {
-    @SerializedName("trial") TRIAL,
-    @SerializedName("placement") PLACEMENT,
-    @SerializedName("event") EVENT
-}

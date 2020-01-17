@@ -88,7 +88,7 @@ dependencies {
     implementation(dep.lottie)
 
     debugImplementation(dep.objectbox_debug)
-    releaseImplementation(dep.objectbox_release)
+//    releaseImplementation(dep.objectbox_release)
 
     implementation("com.google.guava:guava:27.0.1-android")
 

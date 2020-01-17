@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="common-jvm">
+    <output-path>C:\Users\avata\Development\Life4Trials\common\build\libs</output-path>
+    <root id="archive" name="common-jvm.jar">
+      <element id="module-output" name="Life4.common.jvmMain" />
+    </root>
+  </artifact>
+</component>

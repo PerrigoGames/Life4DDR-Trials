@@ -2,9 +2,10 @@ package com.perrigogames.life4trials.data
 
 import android.content.res.Resources
 import com.google.gson.annotations.SerializedName
+import com.perrigogames.life4.Constants.AAA_SCORE
+import com.perrigogames.life4.Constants.MAX_SCORE
+import com.perrigogames.life4.Constants.TRIAL_LENGTH
 import com.perrigogames.life4trials.R
-import com.perrigogames.life4trials.data.TrialData.Companion.AAA_SCORE
-import com.perrigogames.life4trials.data.TrialData.Companion.MAX_SCORE
 import java.io.Serializable
 
 data class TrialGoalSet(val rank: TrialRank,
@@ -68,7 +69,7 @@ data class TrialGoalSet(val rank: TrialRank,
                     }
                 }
             }
-            strings.add("• " + res.getString(R.string.clear_first_songs, res.getString(setType!!.clearRes), chainEnd!!))
+            strings.add("• " +  res.getString(R.string.clear_first_songs, res.getString(setType!!.clearRes), chainEnd!!))
         }
     }
 
@@ -79,7 +80,7 @@ data class TrialGoalSet(val rank: TrialRank,
                 scoreGroups[i] = (scoreGroups[i] ?: mutableListOf()).apply { add(index) }
             }
 
-            val allSongs = scores.size == TrialData.TRIAL_LENGTH
+            val allSongs = scores.size == TRIAL_LENGTH
 
             if (scoreGroups.size == 1 && allSongs) {
                 strings.add(onEveryString(res, scores[0]))
@@ -108,7 +109,7 @@ data class TrialGoalSet(val rank: TrialRank,
                 scoreCounts[it] = (scoreCounts[it] ?: 0) + 1
             }
 
-            val allSongs = scoreSort.size == TrialData.TRIAL_LENGTH
+            val allSongs = scoreSort.size == TRIAL_LENGTH
             val minimumScore = scoreSort.last()
 
             if (scoreCounts.size == 1) {

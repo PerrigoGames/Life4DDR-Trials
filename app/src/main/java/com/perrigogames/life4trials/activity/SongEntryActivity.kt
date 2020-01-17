@@ -15,17 +15,17 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.perrigogames.life4.Constants.MAX_SCORE
+import com.perrigogames.life4.Constants.SCORE_PENALTY_PERFECT
+import com.perrigogames.life4.SettingsKeys
 import com.perrigogames.life4trials.R
-import com.perrigogames.life4trials.SettingsKeys
 import com.perrigogames.life4trials.data.ClearType
 import com.perrigogames.life4trials.data.ClearType.*
 import com.perrigogames.life4trials.data.Song
 import com.perrigogames.life4trials.data.SongResult
-import com.perrigogames.life4trials.data.TrialData
 import com.perrigogames.life4trials.util.SharedPrefsUtil
 import com.perrigogames.life4trials.util.visibilityBool
 import kotlinx.android.synthetic.main.content_song_entry.*
-
 
 class SongEntryActivity: AppCompatActivity() {
 
@@ -68,7 +68,7 @@ class SongEntryActivity: AppCompatActivity() {
             if (clearType.stableId >= PERFECT_FULL_COMBO.stableId) {
                 modified = true
                 val intVal = s?.toString()?.toIntOrNull() ?: 0
-                field_score.setText((TrialData.MAX_SCORE - (intVal * TrialData.SCORE_PENALTY_PERFECT)).toString())
+                field_score.setText((MAX_SCORE - (intVal * SCORE_PENALTY_PERFECT)).toString())
                 field_ex.setText(((song?.ex ?: 0) - intVal).toString())
             }
         }
