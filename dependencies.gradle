@@ -72,8 +72,6 @@ ext {
                                           "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidx_lifecycle_version"],
             eventbus                   : "org.greenrobot:eventbus:$eventbus_version",
             dexter                     : "com.karumi:dexter:$dexter_version",
-            objectbox_debug            : "io.objectbox:objectbox-android-objectbrowser:$objectbox_version",
-            objectbox_release          : "io.objectbox:objectbox-android:$objectbox_version",
             androidx_test              : "androidx.test.ext:junit:1.1.1",
             espresso                   : ["androidx.test:runner:$test_runner_version",
                                           "androidx.test.espresso:espresso-core:$espresso_version",

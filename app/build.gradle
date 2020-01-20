@@ -87,8 +87,8 @@ dependencies {
     implementation(dep.coroutines_jvm)
     implementation(dep.lottie)
 
-    debugImplementation(dep.objectbox_debug)
-//    releaseImplementation(dep.objectbox_release)
+    debugImplementation("io.objectbox:objectbox-android-objectbrowser:$objectbox_version")
+    releaseImplementation("io.objectbox:objectbox-android:$objectbox_version")
 
     implementation("com.google.guava:guava:27.0.1-android")
 

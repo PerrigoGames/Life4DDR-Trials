@@ -51,6 +51,7 @@ kotlin {
         }
 
         val jvmMain by getting {
+            dependsOn(commonMain)
             dependencies {
                 api("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
                 api("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version")
