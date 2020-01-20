@@ -104,7 +104,9 @@ kotlin {
     configure(listOf(iosArm32, iosArm64, iosX64)) {
         compilations {
             val main by getting {
-                extraOpts("-Xobjc-generics")
+                kotlinOptions {
+                    freeCompilerArgs = listOf("-Xobjc-generics")
+                }
             }
         }
 
